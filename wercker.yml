@@ -39,3 +39,51 @@ build:
         password: fira2212 # Registry password
         registry: https://registry.hub.docker.com/v2
         repository: firadaboss/magento3
+test:
+    # Steps make up the actions in your pipeline
+    # Read more about steps on our dev center:
+    # https://devcenter.wercker.com/development/steps/
+  steps:
+    # A custom script step, name value is used in the UI
+    # and the code value contains the command that get executed
+    - script:
+        name: echo nodejs information
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running"
+          
+    - internal/docker-build:
+        dockerfile: Dockerfile
+        image-name: magento3
+        
+    - internal/docker-push:
+        # specify the image to be pushed - this is the one we created earlier
+        image-name: magento3
+        username: firadaboss # Registry username  
+        password: fira2212 # Registry password
+        registry: https://registry.hub.docker.com/v2
+        repository: firadaboss/magento3        
+deploy:
+    # Steps make up the actions in your pipeline
+    # Read more about steps on our dev center:
+    # https://devcenter.wercker.com/development/steps/
+  steps:
+    # A custom script step, name value is used in the UI
+    # and the code value contains the command that get executed
+    - script:
+        name: echo nodejs information
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running"
+          
+    - internal/docker-build:
+        dockerfile: Dockerfile
+        image-name: magento3
+        
+    - internal/docker-push:
+        # specify the image to be pushed - this is the one we created earlier
+        image-name: magento3
+        username: firadaboss # Registry username  
+        password: fira2212 # Registry password
+        registry: https://registry.hub.docker.com/v2
+        repository: firadaboss/magento3                
