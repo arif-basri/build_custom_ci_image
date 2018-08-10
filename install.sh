@@ -6,7 +6,7 @@ export COMPOSER_HOME=/var/www/.composer/
 
 curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer
-cp docker/auth.json $COMPOSER_HOME
+cp /u16/docker/auth.json $COMPOSER_HOME
 
 requirements="libpng12-dev libmcrypt-dev libmcrypt4 libcurl3-dev libfreetype6 libjpeg-turbo8 libjpeg-turbo8-dev libpng12-dev libfreetype6-dev libicu-dev libxslt1-dev" \
     && apt-get update \
