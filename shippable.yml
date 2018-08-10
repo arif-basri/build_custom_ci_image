@@ -1,16 +1,16 @@
 resources:
   - name: build_custom_ci_repo
     type: gitRepo
-    integration: drship_github  #replace with your Github integration, if needed
+    integration: github_integration  #replace with your Github integration, if needed
     pointer:
-      sourceName: "devops-recipes/build_custom_ci_image"  #org name/repository name
+      sourceName: "arif-basri/build_custom_ci_image"  #org name/repository name
       branch: master
 
   - name: build_custom_ci_img_dh
     type: image
-    integration: drship_dockerhub # replace with your integration name
+    integration: docker_integration # replace with your integration name
     versionTemplate:
-      sourceName: "devopsrecipes/build_custom_ci" # replace with your Hub URL
+      sourceName: "firadaboss/build_custom_ci" # replace with your Hub URL
       versionName: latest
 
 jobs:
