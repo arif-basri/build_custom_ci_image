@@ -82,9 +82,9 @@ chsh -s /bin/bash www-data
   # python-dev=2.7.12*
 
 # echo "================= Installing Git ==================="
-# add-apt-repository ppa:git-core/ppa -y
-# apt-get update
-# apt-get install -q -y git
+add-apt-repository ppa:git-core/ppa -y
+apt-get update
+apt-get install -q -y git
 
 
 # echo "================= Adding JQ 1.5.1 ==================="
