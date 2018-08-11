@@ -59,7 +59,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 WORKDIR $INSTALL_DIR
 
 # Add cron job
-ADD crontab /etc/cron.d/magento2-cron
+ADD docker/crontab /etc/cron.d/magento2-cron
 RUN chmod 0644 /etc/cron.d/magento2-cron \
     && crontab -u www-data /etc/cron.d/magento2-cron
 	
