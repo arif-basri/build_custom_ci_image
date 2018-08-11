@@ -45,10 +45,10 @@ RUN cd $INSTALL_DIR \
     && find . -type f -exec chmod 660 {} \; \
     && chmod u+x bin/magento
 
-COPY ./install-magento /usr/local/bin/install-magento
+COPY docker/install-magento /usr/local/bin/install-magento
 RUN chmod +x /usr/local/bin/install-magento
 
-COPY ./install-sampledata /usr/local/bin/install-sampledata
+COPY docker/install-sampledata /usr/local/bin/install-sampledata
 RUN chmod +x /usr/local/bin/install-sampledata
 
 RUN a2enmod rewrite
